@@ -49,12 +49,10 @@ class CustomerPage extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            Icons.person_add, // Replace with the icon you want
-                            color: Colors.deepPurple, // Set the icon color
+                            Icons.person_add,
+                            color: Colors.deepPurple,
                           ),
-                          SizedBox(
-                              width:
-                                  8), // Adjust the spacing between icon and text
+                          SizedBox(width: 8),
                           Text('Add Customer'),
                         ],
                       ),
