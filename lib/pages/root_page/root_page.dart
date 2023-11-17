@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpos/pages/customer_page/customer_page_view.dart';
 import 'package:mpos/pages/home_page/home_page_view.dart';
 
 class PosApp extends StatefulWidget {
@@ -31,6 +32,10 @@ class _PosAppState extends State<PosApp> {
                 label: 'Home',
               ),
               BottomNavigationBarItem(
+                icon: Icon(Icons.people),
+                label: 'Customers',
+              ),
+              BottomNavigationBarItem(
                 icon: Icon(Icons.shopping_cart),
                 label: 'Cart',
               ),
@@ -52,10 +57,12 @@ class _PosAppState extends State<PosApp> {
           body: selectedIndex == 0
               ? const Homepage()
               : selectedIndex == 1
-                  ? const Text('Cart')
+                  ? const CustomerPage()
                   : selectedIndex == 2
                       ? const Text('Profile')
-                      : Container(),
+                      : selectedIndex == 3
+                          ? const Text('Settings')
+                          : const Text('Error'),
         ),
       ),
     );

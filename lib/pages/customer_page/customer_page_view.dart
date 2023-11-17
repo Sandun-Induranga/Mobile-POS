@@ -5,6 +5,15 @@ class CustomerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Column(
+      // mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text('Customer Page',
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+        SizedBox(height: 20),
+        Text('Coming Soon'),
+      ],
+    );
   }
 }
