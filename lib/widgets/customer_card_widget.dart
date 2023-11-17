@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpos/widgets/customer_form_widget.dart';
 
 class CustomerCard extends StatelessWidget {
   const CustomerCard({super.key});
@@ -17,7 +18,12 @@ class CustomerCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const CustomerForm(),
+                  );
+                },
                 child: const Text('Edit'),
               ),
               const SizedBox(width: 8),
