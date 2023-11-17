@@ -43,7 +43,7 @@ class _PosAppState extends State<PosApp> {
               label: 'Profile',
             ),
           ],
-          currentIndex: 0,
+          currentIndex: selectedIndex,
           backgroundColor: Colors.white,
           selectedItemColor: Colors.deepPurple,
           unselectedItemColor: Colors.grey,
