@@ -62,7 +62,7 @@ class CustomerPage extends StatelessWidget {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.fromLTRB(20, 14, 20, 0),
+              padding: EdgeInsets.fromLTRB(20, 14, 20, 10),
               child: SearchBar(
                 hintText: 'Search Customer',
               ),
@@ -70,10 +70,10 @@ class CustomerPage extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.57,
               child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
                 padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.05,
                 ),
+                physics: const BouncingScrollPhysics(),
                 child: ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
