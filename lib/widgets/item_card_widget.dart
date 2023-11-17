@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 
-class CustomerCard extends StatelessWidget {
-  const CustomerCard({super.key});
+class ItemCard extends StatefulWidget {
+  const ItemCard({super.key});
 
+  @override
+  State<ItemCard> createState() => _ItemCardState();
+}
+
+class _ItemCardState extends State<ItemCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Column(
         children: [
           const ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Customer Name'),
-            subtitle: Text('Customer Address'),
+            leading: Icon(Icons.shopping_bag),
+            title: Text('Item Name'),
+            subtitle: Text('Item Description'),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
