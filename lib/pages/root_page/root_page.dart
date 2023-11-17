@@ -36,7 +36,7 @@ class _PosAppState extends State<PosApp> {
               label: 'Customers',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),
+              icon: Icon(Icons.shopping_bag),
               label: 'Items',
             ),
             BottomNavigationBarItem(

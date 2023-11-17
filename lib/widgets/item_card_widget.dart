@@ -15,8 +15,27 @@ class _ItemCardState extends State<ItemCard> {
         children: [
           const ListTile(
             leading: Icon(Icons.shopping_bag),
-            title: Text('Item Name'),
-            subtitle: Text('Item Description'),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Item Name'),
+                SizedBox(width: 8),
+                Text(
+                  'RS 100',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            subtitle: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Item Description'),
+                Text(' x 1'),
+              ],
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
