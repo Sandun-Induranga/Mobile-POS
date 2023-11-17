@@ -11,7 +11,6 @@ class CustomerPage extends StatelessWidget {
         color: Colors.deepPurple[50],
         width: MediaQuery.of(context).size.width,
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
@@ -24,7 +23,6 @@ class CustomerPage extends StatelessWidget {
                 color: Colors.deepPurple,
               ),
               alignment: Alignment.center,
-              // color: Colors.deepPurple,
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 50),
                 child: Column(
