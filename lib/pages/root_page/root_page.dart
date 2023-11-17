@@ -23,47 +23,45 @@ class _PosAppState extends State<PosApp> {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          bottomNavigationBar: BottomNavigationBar(
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.people),
-                label: 'Customers',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_cart),
-                label: 'Cart',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'Profile',
-              ),
-            ],
-            currentIndex: 0,
-            backgroundColor: Colors.white,
-            selectedItemColor: Colors.deepPurple,
-            unselectedItemColor: Colors.grey,
-            onTap: (index) {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
-          ),
-          body: selectedIndex == 0
-              ? const Homepage()
-              : selectedIndex == 1
-                  ? const CustomerPage()
-                  : selectedIndex == 2
-                      ? const Text('Profile')
-                      : selectedIndex == 3
-                          ? const Text('Settings')
-                          : const Text('Error'),
+      home: Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.people),
+              label: 'Customers',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart),
+              label: 'Cart',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+          ],
+          currentIndex: 0,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.deepPurple,
+          unselectedItemColor: Colors.grey,
+          onTap: (index) {
+            setState(() {
+              selectedIndex = index;
+            });
+          },
         ),
+        body: selectedIndex == 0
+            ? const Homepage()
+            : selectedIndex == 1
+                ? const CustomerPage()
+                : selectedIndex == 2
+                    ? const Text('Profile')
+                    : selectedIndex == 3
+                        ? const Text('Settings')
+                        : const Text('Error'),
       ),
     );
   }
