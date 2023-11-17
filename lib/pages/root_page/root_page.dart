@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:mpos/pages/home_page/home_page_view.dart';
 
-class PosApp extends StatelessWidget {
-  const PosApp({super.key});
+class PosApp extends StatefulWidget {
+  const PosApp({
+    super.key,
+    currentIndex,
+  });
 
+  @override
+  State<PosApp> createState() => _PosAppState();
+}
+
+class _PosAppState extends State<PosApp> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,25 +22,40 @@ class PosApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.deepPurple),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),
-              label: 'Cart',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-          backgroundColor: Colors.white,
-          selectedItemColor: Colors.deepPurple,
-          unselectedItemColor: Colors.grey,
+      home: SafeArea(
+        child: Scaffold(
+          bottomNavigationBar: BottomNavigationBar(
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_cart),
+                label: 'Cart',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ],
+            currentIndex: 0,
+            backgroundColor: Colors.white,
+            selectedItemColor: Colors.deepPurple,
+            unselectedItemColor: Colors.grey,
+            onTap: (index) {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+          ),
+          body: selectedIndex == 0
+              ? const Homepage()
+              : selectedIndex == 1
+                  ? const Text('Cart')
+                  : selectedIndex == 2
+                      ? const Text('Profile')
+                      : Container(),
         ),
       ),
     );
