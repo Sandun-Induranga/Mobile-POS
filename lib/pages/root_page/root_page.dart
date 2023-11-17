@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mpos/pages/customer_page/customer_page_view.dart';
 import 'package:mpos/pages/home_page/home_page_view.dart';
 import 'package:mpos/pages/item_page/item_page_view.dart';
+import 'package:mpos/pages/manage_order_page/manage_order_page_view.dart';
 
 class PosApp extends StatefulWidget {
   const PosApp({
@@ -40,8 +41,12 @@ class _PosAppState extends State<PosApp> {
               label: 'Items',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
+              icon: Icon(Icons.shopping_cart),
+              label: 'Orders',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
             ),
           ],
           currentIndex: selectedIndex,
@@ -61,7 +66,7 @@ class _PosAppState extends State<PosApp> {
                 : selectedIndex == 2
                     ? const ItemPage()
                     : selectedIndex == 3
-                        ? const Text('Settings')
+                        ? const ManageOrderPage()
                         : const Text('Error'),
       ),
     );

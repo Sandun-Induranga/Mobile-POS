@@ -49,11 +49,11 @@ class ManageOrderPage extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            Icons.person_add,
+                            Icons.add_shopping_cart,
                             color: Colors.deepPurple,
                           ),
                           SizedBox(width: 8),
-                          Text('Add Order'),
+                          Text('Place Order'),
                         ],
                       ),
                     ),
@@ -61,73 +61,12 @@ class ManageOrderPage extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      decoration: const InputDecoration(
-                        hintText: 'Search',
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
-                        ),
-                      ),
-                    ),
-                    child: const Text('Search'),
-                  ),
-                ],
+            const Padding(
+              padding: EdgeInsets.fromLTRB(20, 14, 20, 10),
+              child: SearchBar(
+                hintText: 'Search Orders',
               ),
             ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: DropdownButtonFormField(
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                      ),
-                      items: const [
-                        DropdownMenuItem(
-                          child: Text('Sort by Name'),
-                          value: 'name',
-                        ),
-                        DropdownMenuItem(
-                          child: Text('Sort by Date'),
-                          value: 'date',
-                        ),
-                      ],
-                      onChanged: (value) {},
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
-                        ),
-                      ),
-                    ),
-                    child: const Text('Sort'),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.57,
               child: SingleChildScrollView(
