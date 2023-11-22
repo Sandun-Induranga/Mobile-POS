@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mpos/widgets/item_card_widget.dart';
+import 'package:mpos/ui/widgets/customer_card_widget.dart';
 
-class ItemPage extends StatelessWidget {
-  const ItemPage({super.key});
+class CustomerPage extends StatelessWidget {
+  const CustomerPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class ItemPage extends StatelessWidget {
                 child: Column(
                   children: [
                     const Text(
-                      'Manage Items',
+                      'Manage Customers',
                       style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
@@ -49,11 +49,11 @@ class ItemPage extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            Icons.add_shopping_cart,
+                            Icons.person_add,
                             color: Colors.deepPurple,
                           ),
                           SizedBox(width: 8),
-                          Text('Add Item'),
+                          Text('Add Customer'),
                         ],
                       ),
                     ),
@@ -64,7 +64,7 @@ class ItemPage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.fromLTRB(20, 14, 20, 10),
               child: SearchBar(
-                hintText: 'Search Item',
+                hintText: 'Search Customer',
               ),
             ),
             SizedBox(
@@ -79,7 +79,7 @@ class ItemPage extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: 20,
                   itemBuilder: (context, index) {
-                    return const ItemCard();
+                    return const CustomerCard();
                   },
                 ),
               ),

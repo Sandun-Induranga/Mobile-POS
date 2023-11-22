@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mpos/widgets/customer_form_widget.dart';
+import 'package:mpos/ui/widgets/customer_form_widget.dart';
 
 class CustomerCard extends StatelessWidget {
   const CustomerCard({super.key});
