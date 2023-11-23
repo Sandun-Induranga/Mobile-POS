@@ -12,10 +12,30 @@ class CustomerCard extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            leading: const Icon(Icons.person),
-            title: Text(customer.name),
-            subtitle: Text(customer.address),
-          ),
+              leading: const Icon(Icons.person),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(customer.name),
+                  const SizedBox(width: 8),
+                  Text(
+                    customer.id.toString(),
+                    style: const TextStyle(
+                      color: Colors.deepPurple,
+                    ),
+                  ),
+                ],
+              ),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(customer.address),
+                  Text(
+                    customer.phone ?? 'No Contact',
+                    style: const TextStyle(fontSize: 12),
+                  ),
+                ],
+              )),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
