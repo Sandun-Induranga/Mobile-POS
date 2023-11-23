@@ -66,21 +66,19 @@ class _CustomerFormState extends State<CustomerForm> {
                 ),
                 const SizedBox(width: 8),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     Navigator.pop(context);
-                    print('Customer Name: ${_nameController.text}');
-                    print('Customer Address: ${_addressController.text}');
-                    print('Customer Phone: ${_phoneController.text}');
-                    _customerCrudUtil.createCustomer(
+                    final res = await _customerCrudUtil.createCustomer(
                       Customer(
                         name: _nameController.text,
                         address: _addressController.text,
                         phone: _phoneController.text,
                       ),
                     );
-                    SnackBar snackBar = const SnackBar(
-                      content: Text('Customer Added'),
+                    SnackBar snackBar = SnackBar(
+                      content: Text(res),
                     );
+                    // ignore: use_build_context_synchronously
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   },
                   child: const Text('Save'),

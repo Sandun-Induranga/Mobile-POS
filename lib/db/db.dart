@@ -14,7 +14,7 @@ class DB {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
             address TEXT NOT NULL,
-            phone TEXT,
+            phone TEXT
           )
         ''');
         await db.execute('''
@@ -22,13 +22,14 @@ class DB {
             code INTEGER PRIMARY KEY AUTOINCREMENT,
             description TEXT NOT NULL,
             unitPrice DECIMAL NOT NULL,
-            qtyOnHand INTEGER NOT NULL,
+            qtyOnHand INTEGER NOT NULL
           )
         ''');
         await db.execute('''
-          CREATE TABLE IF NOT EXISTS order (
+          CREATE TABLE IF NOT EXISTS orders (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             customerId INTEGER NOT NULL,
+            itemCode INTEGER NOT NULL,
             orderDate DATETIME NOT NULL,
             cost DECIMAL NOT NULL,
             FOREIGN KEY (customerId) REFERENCES customer (id),
