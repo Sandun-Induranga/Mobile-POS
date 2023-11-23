@@ -24,10 +24,17 @@ class Homepage extends StatelessWidget {
             alignment: Alignment.center,
             child: const Padding(
               padding: EdgeInsets.symmetric(vertical: 50),
-              child: Column(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Icon(
+                    Icons.dashboard,
+                    size: 40,
+                    color: Colors.white,
+                  ),
+                  SizedBox(width: 10),
                   Text(
-                    'Manage Customers',
+                    'Dashboard',
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
@@ -51,7 +58,7 @@ class Homepage extends StatelessWidget {
                       vertical: 20,
                     ),
                     child: ListTile(
-                      leading: Icon(Icons.bar_chart, color: Colors.white),
+                      leading: Icon(Icons.shopping_cart, color: Colors.white),
                       title: Text(
                         'Total Sales',
                         style: TextStyle(
@@ -77,7 +84,7 @@ class Homepage extends StatelessWidget {
                       vertical: 20,
                     ),
                     child: ListTile(
-                      leading: Icon(Icons.bar_chart, color: Colors.white),
+                      leading: Icon(Icons.pie_chart, color: Colors.white),
                       title: Text(
                         'Monthly Income',
                         style: TextStyle(
@@ -103,7 +110,7 @@ class Homepage extends StatelessWidget {
                       vertical: 20,
                     ),
                     child: ListTile(
-                      leading: Icon(Icons.bar_chart, color: Colors.white),
+                      leading: Icon(Icons.today_outlined, color: Colors.white),
                       title: Text(
                         'Daily Income',
                         style: TextStyle(
@@ -129,7 +136,7 @@ class Homepage extends StatelessWidget {
                       vertical: 20,
                     ),
                     child: ListTile(
-                      leading: Icon(Icons.bar_chart, color: Colors.white),
+                      leading: Icon(Icons.people, color: Colors.white),
                       title: Text(
                         'Total Customers',
                         style: TextStyle(
