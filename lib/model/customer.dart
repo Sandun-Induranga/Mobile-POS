@@ -4,7 +4,12 @@ class Customer {
   final String address;
   final String? phone;
 
-  Customer({this.id, required this.name, required this.address, this.phone});
+  Customer({
+    this.id,
+    required this.name,
+    required this.address,
+    this.phone,
+  });
 
   factory Customer.fromMap(Map<String, dynamic> map) {
     return Customer(
