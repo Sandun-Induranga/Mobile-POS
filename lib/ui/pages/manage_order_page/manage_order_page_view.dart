@@ -74,14 +74,14 @@ class ManageOrderPage extends StatelessWidget {
                   horizontal: MediaQuery.of(context).size.width * 0.05,
                 ),
                 physics: const BouncingScrollPhysics(),
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 20,
-                  itemBuilder: (context, index) {
-                    return const CustomerCard();
-                  },
-                ),
+                // child: ListView.builder(
+                //   shrinkWrap: true,
+                //   physics: const NeverScrollableScrollPhysics(),
+                //   itemCount: 20,
+                //   itemBuilder: (context, index) {
+                //     return const CustomerCard();
+                //   },
+                // ),
               ),
             )
           ],

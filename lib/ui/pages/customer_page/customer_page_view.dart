@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:mpos/model/customer.dart';
 import 'package:mpos/ui/widgets/customer_card_widget.dart';
 import 'package:mpos/ui/widgets/customer_form_widget.dart';
+import 'package:mpos/util/customer_crud_util.dart';
 
 class CustomerPage extends StatelessWidget {
   const CustomerPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final Future<List<Customer>> _customers =
+        CustomerCrudUtil().getAllCustomers();
     return SingleChildScrollView(
       child: Container(
         color: Colors.deepPurple[50],
@@ -76,19 +80,35 @@ class CustomerPage extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.57,
               child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.05,
-                ),
-                physics: const BouncingScrollPhysics(),
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 20,
-                  itemBuilder: (context, index) {
-                    return const CustomerCard();
-                  },
-                ),
-              ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.05,
+                  ),
+                  physics: const BouncingScrollPhysics(),
+                  child: FutureBuilder<List<Customer>>(
+                    future: _customers,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: snapshot.data!.length,
+                          itemBuilder: (context, index) {
+                            return CustomerCard(
+                              customer: snapshot.data![index],
+                            );
+                          },
+                        );
+                      } else if (snapshot.hasError) {
+                        return const Center(
+                          child: Text('Failed to load customers'),
+                        );
+                      } else {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                    },
+                  )),
             )
           ],
         ),

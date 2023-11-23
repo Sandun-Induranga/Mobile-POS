@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:mpos/model/customer.dart';
 import 'package:mpos/ui/widgets/customer_form_widget.dart';
 
 class CustomerCard extends StatelessWidget {
-  const CustomerCard({super.key});
+  const CustomerCard({super.key, required this.customer});
+  final Customer customer;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Column(
         children: [
-          const ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Customer Name'),
-            subtitle: Text('Customer Address'),
+          ListTile(
+            leading: const Icon(Icons.person),
+            title: Text(customer.name),
+            subtitle: Text(customer.address),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
