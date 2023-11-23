@@ -17,7 +17,9 @@ class CustomerCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(customer.name),
-                  const SizedBox(width: 8),
+                  const SizedBox(
+                    width: 8,
+                  ),
                   Text(
                     customer.id.toString(),
                     style: const TextStyle(
@@ -32,7 +34,9 @@ class CustomerCard extends StatelessWidget {
                   Text(customer.address),
                   Text(
                     customer.phone ?? 'No Contact',
-                    style: const TextStyle(fontSize: 12),
+                    style: const TextStyle(
+                      fontSize: 12,
+                    ),
                   ),
                 ],
               )),
