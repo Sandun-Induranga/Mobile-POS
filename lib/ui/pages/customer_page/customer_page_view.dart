@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpos/ui/widgets/customer_card_widget.dart';
+import 'package:mpos/ui/widgets/customer_form_widget.dart';
 
 class CustomerPage extends StatelessWidget {
   const CustomerPage({super.key});
@@ -37,7 +38,12 @@ class CustomerPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => const CustomerForm(),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(
