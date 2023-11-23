@@ -8,6 +8,10 @@ class CustomerForm extends StatefulWidget {
 }
 
 class _CustomerFormState extends State<CustomerForm> {
+  final _nameController = TextEditingController();
+  final _addressController = TextEditingController();
+  final _phoneController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -29,6 +33,7 @@ class _CustomerFormState extends State<CustomerForm> {
                 border: OutlineInputBorder(),
                 labelText: 'Customer Name',
               ),
+              controller: _nameController,
             ),
             const SizedBox(height: 16),
             TextFormField(
@@ -36,6 +41,7 @@ class _CustomerFormState extends State<CustomerForm> {
                 border: OutlineInputBorder(),
                 labelText: 'Customer Address',
               ),
+              controller: _addressController,
             ),
             const SizedBox(height: 16),
             TextFormField(
@@ -43,6 +49,7 @@ class _CustomerFormState extends State<CustomerForm> {
                 border: OutlineInputBorder(),
                 labelText: 'Customer Phone',
               ),
+              controller: _phoneController,
             ),
             const SizedBox(height: 16),
             Row(
