@@ -4,7 +4,7 @@ class DB {
   static int version = 1;
   static String dbName = 'mpos.db';
 
-  static Future<Database> init() async {
+  static Future<Database> getDB() async {
     return await openDatabase(
       dbName,
       version: version,
@@ -21,7 +21,7 @@ class DB {
           CREATE TABLE IF NOT EXISTS item (
             code INTEGER PRIMARY KEY AUTOINCREMENT,
             description TEXT NOT NULL,
-            price DECIMAL NOT NULL,
+            unitPrice DECIMAL NOT NULL,
             qtyOnHand INTEGER NOT NULL,
           )
         ''');
