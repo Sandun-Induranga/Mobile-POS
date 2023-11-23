@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mpos/model/customer.dart';
+import 'package:mpos/util/customer_crud_util.dart';
 
 class CustomerForm extends StatefulWidget {
   const CustomerForm({super.key});
@@ -11,6 +13,7 @@ class _CustomerFormState extends State<CustomerForm> {
   final _nameController = TextEditingController();
   final _addressController = TextEditingController();
   final _phoneController = TextEditingController();
+  final _customerCrudUtil = CustomerCrudUtil();
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +66,23 @@ class _CustomerFormState extends State<CustomerForm> {
                 ),
                 const SizedBox(width: 8),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                    print('Customer Name: ${_nameController.text}');
+                    print('Customer Address: ${_addressController.text}');
+                    print('Customer Phone: ${_phoneController.text}');
+                    _customerCrudUtil.createCustomer(
+                      Customer(
+                        name: _nameController.text,
+                        address: _addressController.text,
+                        phone: _phoneController.text,
+                      ),
+                    );
+                    SnackBar snackBar = const SnackBar(
+                      content: Text('Customer Added'),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  },
                   child: const Text('Save'),
                 ),
                 const SizedBox(width: 8),
