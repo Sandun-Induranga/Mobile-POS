@@ -4,8 +4,8 @@ import 'package:mpos/ui/widgets/customer_card_widget.dart';
 import 'package:mpos/ui/widgets/customer_form_widget.dart';
 import 'package:mpos/util/customer_crud_util.dart';
 
-class CustomerPage extends StatelessWidget {
-  const CustomerPage({super.key});
+class CustomerPageView extends StatelessWidget {
+  const CustomerPageView({super.key});
 
   @override
   Widget build(BuildContext context) {

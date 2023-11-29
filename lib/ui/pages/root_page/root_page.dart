@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mpos/ui/pages/customer_page/customer_page_view.dart';
+import 'package:mpos/ui/pages/customer_page/customer_page_provider.dart';
 import 'package:mpos/ui/pages/home_page/home_page_view.dart';
 import 'package:mpos/ui/pages/item_page/item_page_view.dart';
 import 'package:mpos/ui/pages/manage_order_page/manage_order_page_view.dart';
@@ -62,7 +62,7 @@ class _PosAppState extends State<PosApp> {
         body: selectedIndex == 0
             ? const Homepage()
             : selectedIndex == 1
-                ? const CustomerPage()
+                ? CustomerPageProvider()
                 : selectedIndex == 2
                     ? const ItemPage()
                     : selectedIndex == 3
