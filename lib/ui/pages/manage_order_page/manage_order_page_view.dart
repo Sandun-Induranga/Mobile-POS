@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mpos/ui/widgets/customer_card_widget.dart';
 
-class ManageOrderPage extends StatelessWidget {
-  const ManageOrderPage({super.key});
+class ManageOrderPageView extends StatelessWidget {
+  const ManageOrderPageView({super.key});
 
   @override
   Widget build(BuildContext context) {
