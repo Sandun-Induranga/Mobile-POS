@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
 
 @immutable
-class ItemPageState {}
+class ItemPageState {
+  static ItemPageState get initialState => ItemPageState();
+}

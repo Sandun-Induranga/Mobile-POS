@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
 
 @immutable
-class ManageOrderPageState {}
+class ManageOrderPageState {
+  static ManageOrderPageState get initialState => ManageOrderPageState();
+}
