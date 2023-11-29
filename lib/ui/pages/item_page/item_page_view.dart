@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mpos/ui/widgets/item_card_widget.dart';
 
-class ItemPage extends StatelessWidget {
-  const ItemPage({super.key});
+class ItemPageView extends StatelessWidget {
+  const ItemPageView({super.key});
 
   @override
   Widget build(BuildContext context) {

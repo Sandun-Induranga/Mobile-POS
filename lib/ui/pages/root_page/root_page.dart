@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mpos/ui/pages/customer_page/customer_page_provider.dart';
 import 'package:mpos/ui/pages/home_page/home_page_view.dart';
-import 'package:mpos/ui/pages/item_page/item_page_view.dart';
+import 'package:mpos/ui/pages/item_page/item_page_provider.dart';
 import 'package:mpos/ui/pages/manage_order_page/manage_order_page_view.dart';
 
 class PosApp extends StatefulWidget {
@@ -64,7 +64,7 @@ class _PosAppState extends State<PosApp> {
             : selectedIndex == 1
                 ? CustomerPageProvider()
                 : selectedIndex == 2
-                    ? const ItemPage()
+                    ? ItemPageProvider()
                     : selectedIndex == 3
                         ? const ManageOrderPage()
                         : const Text('Error'),
