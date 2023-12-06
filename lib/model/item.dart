@@ -1,13 +1,13 @@
 class Item {
-  final String code;
+  final int? code;
   final String description;
-  final int qty;
+  final int qtyOnHand;
   final double unitPrice;
 
   Item({
-    required this.code,
+    this.code,
     required this.description,
-    required this.qty,
+    required this.qtyOnHand,
     required this.unitPrice,
   });
 
@@ -15,7 +15,7 @@ class Item {
     return Item(
       code: map['code'],
       description: map['description'],
-      qty: map['qty'],
+      qtyOnHand: map['qty'],
       unitPrice: map['unitPrice'],
     );
   }
@@ -24,13 +24,13 @@ class Item {
     return {
       'code': code,
       'description': description,
-      'qty': qty,
+      'qty': qtyOnHand,
       'unitPrice': unitPrice,
     };
   }
 
   @override
   String toString() {
-    return 'Item{code: $code, description: $description, qty: $qty, unitPrice: $unitPrice}';
+    return 'Item{code: $code, description: $description, qty: $qtyOnHand, unitPrice: $unitPrice}';
   }
 }
