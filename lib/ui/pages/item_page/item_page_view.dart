@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpos/ui/widgets/item_card_widget.dart';
+import 'package:mpos/ui/widgets/item_form_widget.dart';
 
 class ItemPageView extends StatelessWidget {
   const ItemPageView({super.key});
@@ -37,7 +38,12 @@ class ItemPageView extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => const ItemForm(),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(

@@ -24,7 +24,7 @@ class _ItemFormState extends State<ItemForm> {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
-              'Add Customer',
+              'Add Item',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -46,6 +46,7 @@ class _ItemFormState extends State<ItemForm> {
               ),
               controller: _qtyOnHandController,
             ),
+            const SizedBox(height: 16),
             TextFormField(
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
